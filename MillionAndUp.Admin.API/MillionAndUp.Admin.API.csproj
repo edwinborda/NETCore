@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>MillionAndUp.Admin.API.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201007042608_Initial.cs" />
+    <Compile Remove="Migrations\20201007042608_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20201007054726_BooksValueGenerated.cs" />
+    <Compile Remove="Migrations\20201007054726_BooksValueGenerated.Designer.cs" />
+    <Compile Remove="Migrations\20201007054959_Initial.cs" />
+    <Compile Remove="Migrations\20201007054959_Initial.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Infraestructure\AuthorService.cs~RF53a76aa.TMP" />
+    <None Remove="MillionAndUp.Admin.API.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MillionAndUp.Admin.API.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MillionAndUp.Admin.Domain\MillionAndUp.Admin.Domain.csproj" />
+    <ProjectReference Include="..\MillionAndUp.Admin.Infraestructure\MillionAndUp.Admin.Infraestructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.6.3" />
+  </ItemGroup>
+
+</Project>
